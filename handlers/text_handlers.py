@@ -31,9 +31,7 @@ def get_info(message: Message):
     chat_id = message.chat.id
     try:
         sorov = message.text
-        print(sorov)
         wikisorov = wikipedia.summary(sorov, sentences=20)
-        print(wikisorov)
         bot.send_message(chat_id, wikisorov, reply_markup=wiki_btn())
     except Exception as e:
         print(e, e.__class__)
